@@ -1,10 +1,12 @@
 import "./App.css";
-import Counter from "./components/Counter";
+// import Counter from "./components/Counter";
+import CheckBoxGroup from "./components/CheckBoxGroup";
 
 function App() {
   return (
     <>
-      <Counter />
+      {/* <Counter /> */}
+      <CheckBoxGroup />
     </>
   );
 }
