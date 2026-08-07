@@ -1,19 +1,33 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+
+const useDebounce = (value, delay = 500) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedValue(value), delay);
+    return () => clearTimeout(timer);
+  }, [value, delay]);
+
+  return debouncedValue;
+};
 
 const DebouncedSearch = () => {
   // create states for input search loding and result
   const [searchInput, setSearchInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState([]);
+  const debouncedQuery = useDebounce(searchInput, 300);
 
   // call the github api
   useEffect(() => {
-    if (!searchInput) return;
+    if (!debouncedQuery.trim()) {
+      setResult([]);
+      return;
+    }
 
     let canceled = false;
     setLoading(true);
 
-    fetch(`https://api.github.com/search/users?q=${searchInput}`)
+    fetch(`https://api.github.com/search/users?q=${debouncedQuery}`)
       .then((res) => res.json())
       .then((data) => {
         if (!canceled) {
@@ -28,7 +42,7 @@ const DebouncedSearch = () => {
     return () => {
       canceled = true;
     };
-  }, [searchInput]);
+  }, [debouncedQuery]);
 
   return (
     <div>
