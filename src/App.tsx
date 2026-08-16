@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 // import DebouncedSearch from "./components/DebouncedSearch";
-import NestedCircle from "./components/NestedCircle";
+// import NestedCircle from "./components/NestedCircle";
 import Alert from "./components/Alert";
+import RegistrationForm from "./components/RegistrationForm";
 // import DebouncedSearch from "./components/DebouncedSearch";
 // import Counter from "./components/Counter";
 // import CheckBoxGroup from "./components/CheckBoxGroup";
@@ -19,9 +20,9 @@ function App() {
       {/* <CheckBoxGroup /> */}
       {/* <Todo /> */}
       {/* <DebouncedSearch /> */}
-      <NestedCircle />
+      {/* <NestedCircle /> */}
       {/* // Usage — flexible through props */}
-      {showSuccess && (
+      {/* {showSuccess && (
         <Alert
           type="success"
           title="Saved!"
@@ -53,7 +54,8 @@ function App() {
         >
           <p>This defaults to "warn" type.</p>
         </Alert>
-      )}
+      )} */}
+      <RegistrationForm />
     </>
   );
 }
