@@ -1,19 +1,19 @@
-import { useState } from "react";
 import "./App.css";
+import LiveWindowSize from "./components/LiveWindowSize";
 // import DebouncedSearch from "./components/DebouncedSearch";
 // import NestedCircle from "./components/NestedCircle";
-import Alert from "./components/Alert";
-import RegistrationForm from "./components/RegistrationForm";
+// import Alert from "./components/Alert";
+// import RegistrationForm from "./components/RegistrationForm";
 // import DebouncedSearch from "./components/DebouncedSearch";
 // import Counter from "./components/Counter";
 // import CheckBoxGroup from "./components/CheckBoxGroup";
 // import Todo from "./components/Todo";
 
 function App() {
-  const [showSuccess, setShowSuccess] = useState(true);
-  const [showError, setShowError] = useState(true);
-  const [showWarning, setShowWarning] = useState(true);
-  const [showInfo, setShowInfo] = useState(true);
+  // const [showSuccess, setShowSuccess] = useState(true);
+  // const [showError, setShowError] = useState(true);
+  // const [showWarning, setShowWarning] = useState(true);
+  // const [showInfo, setShowInfo] = useState(true);
   return (
     <>
       {/* <Counter /> */}
@@ -55,7 +55,8 @@ function App() {
           <p>This defaults to "warn" type.</p>
         </Alert>
       )} */}
-      <RegistrationForm />
+      {/* <RegistrationForm /> */}
+      <LiveWindowSize />
     </>
   );
 }
