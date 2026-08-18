@@ -1,5 +1,6 @@
 import "./App.css";
-import LiveWindowSize from "./components/LiveWindowSize";
+import UserTable from "./components/UserTable";
+// import LiveWindowSize from "./components/LiveWindowSize";
 // import DebouncedSearch from "./components/DebouncedSearch";
 // import NestedCircle from "./components/NestedCircle";
 // import Alert from "./components/Alert";
@@ -14,6 +15,19 @@ function App() {
   // const [showError, setShowError] = useState(true);
   // const [showWarning, setShowWarning] = useState(true);
   // const [showInfo, setShowInfo] = useState(true);
+
+  const users = [
+    { id: 1, name: "Jhon", email: "jhon@gmail.com", role: "Developer" },
+    { id: 2, name: "Mahboob", email: "mahboob@gmail.com", role: "Accountant" },
+    { id: 3, name: "Jane", email: "jane@gmail.com", role: "Electrician" },
+    { id: 4, name: "Jasmine", email: "jasmine@gmail.com", role: "Accountant" },
+    { id: 5, name: "Sara", email: "sara@gmail.com", role: "CA" },
+    { id: 6, name: "Doe", email: "doe@gmail.com", role: "CA" },
+    { id: 7, name: "DC", email: "dc@gmail.com", role: "Technician" },
+    { id: 8, name: "Manoj", email: "manoj@gmail.com", role: "Electrician" },
+    { id: 9, name: "Sib", email: "tain@gmail.com", role: "Developer" },
+  ];
+
   return (
     <>
       {/* <Counter /> */}
@@ -56,7 +70,9 @@ function App() {
         </Alert>
       )} */}
       {/* <RegistrationForm /> */}
-      <LiveWindowSize />
+      {/* <LiveWindowSize /> */}
+
+      <UserTable users={users} />
     </>
   );
 }
